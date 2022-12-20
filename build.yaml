@@ -1,0 +1,11 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          generic_argument_factories: true
+          to_json: false
+      json_serializable:
+        options:
+          field_rename: pascal
+          create_to_json: false
