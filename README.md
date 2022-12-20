@@ -12,7 +12,7 @@ A real estate app with Flutter (iOS and Android) based on the Funda API
 
 <ul>
   <li>Check that flutter version is 3.3 or above</li>
-  <li>Create file key.dart in lib/core/api/</li>
+  <li>Create file key.dart in lib/core/api/ and past this code</li>
   <code>class Key {static const instance = "YOUR API KEY HERE";}</code>
   <li>Set the google map's key in file
     <ul>
@@ -33,3 +33,7 @@ A real estate app with Flutter (iOS and Android) based on the Funda API
 # Tested on
 - iOS Simulator 14 Pro Max
 - Android Simulator Pixel 5
+
+# Screens
+<img src="https://raw.githubusercontent.com/Goolpe/real-estate/master/assets/screenshots/ios01.png" width="150" /> |
+<img src="https://raw.githubusercontent.com/Goolpe/real-estate/master/assets/screenshots/ios02.png" width="150" /> 
