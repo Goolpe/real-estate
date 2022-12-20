@@ -25,6 +25,7 @@ class ErrorIndicator extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             TextButton.icon(
+              key: const Key('Refresh'),
               icon: const Icon(Icons.refresh),
               onPressed: onRefresh,
               label: const Text('Repeat request'),

@@ -27,3 +27,7 @@ class UnknownException extends HttpException {
 class NotFoundException extends HttpException {
   NotFoundException() : super('Not Found');
 }
+
+class TimeOverException extends HttpException {
+  TimeOverException() : super('Time out of request');
+}

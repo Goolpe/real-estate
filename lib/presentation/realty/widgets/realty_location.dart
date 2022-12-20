@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:realestate/core/constants/constants.dart';
+import 'package:realestate/domain/entities/latlon.dart';
 import 'package:realestate/presentation/widgets/widgets.dart';
 
 class RealtyLocation extends StatelessWidget {
   const RealtyLocation({
-    required this.lat,
-    required this.lon,
+    required this.latLon,
     super.key,
   });
 
-  final double lat;
-  final double lon;
+  final LatLon latLon;
+
+  CameraPosition get _cameraPosition {
+    if (latLon.hasNull) {
+      return CameraPosition(
+        target: LatLng(
+          Constants.defaultLocation.lat,
+          Constants.defaultLocation.lon,
+        ),
+        zoom: 11,
+      );
+    }
+
+    return CameraPosition(
+      target: LatLng(latLon.lat, latLon.lon),
+      zoom: 17,
+    );
+  }
+
+  LatLng get _target => _cameraPosition.target;
 
   @override
   Widget build(BuildContext context) {
-    final target = LatLng(lat, lon);
-
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -30,12 +47,14 @@ class RealtyLocation extends StatelessWidget {
             ),
             clipBehavior: Clip.antiAliasWithSaveLayer,
             child: GoogleMap(
-              initialCameraPosition: CameraPosition(target: target, zoom: 17),
+              initialCameraPosition: _cameraPosition,
               markers: {
-                Marker(
-                  markerId: MarkerId('$lat $lon'),
-                  position: target,
-                )
+                if (!latLon.hasNull)
+                  Marker(
+                    markerId:
+                        MarkerId('${_target.latitude} ${_target.longitude}'),
+                    position: _target,
+                  )
               },
             ),
           ),

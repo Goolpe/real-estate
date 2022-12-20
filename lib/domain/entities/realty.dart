@@ -1,4 +1,5 @@
 import 'package:realestate/core/utils/utils.dart';
+import 'package:realestate/domain/entities/latlon.dart';
 import 'package:realestate/domain/entities/realty_photo.dart';
 
 class Realty {
@@ -14,9 +15,7 @@ class Realty {
     required this.numOfBeds,
     required this.description,
     required this.largePhotos,
-    required this.extraLargePhotos,
-    required this.lat,
-    required this.lon,
+    required this.latLon,
     required this.price,
     required this.abbreviation,
     required this.phone,
@@ -33,9 +32,7 @@ class Realty {
   final int numOfBath;
   final int numOfBeds;
   final List<LargeRealtyPhoto> largePhotos;
-  final List<ExtraLargeRealtyPhoto> extraLargePhotos;
-  final double lat;
-  final double lon;
+  final LatLon latLon;
   final int price;
   final String abbreviation;
   final String phone;

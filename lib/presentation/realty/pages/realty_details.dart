@@ -43,8 +43,7 @@ class RealtyDetails extends StatelessWidget {
               if (data.description.isNotEmpty)
                 RealtyDescription(description: data.description),
               RealtyLocation(
-                lat: data.lat,
-                lon: data.lon,
+                latLon: data.latLon,
               ),
             ],
           ),

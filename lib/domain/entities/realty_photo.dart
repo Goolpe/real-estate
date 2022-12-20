@@ -7,7 +7,3 @@ abstract class RealtyPhoto {
 class LargeRealtyPhoto extends RealtyPhoto {
   LargeRealtyPhoto(super.url);
 }
-
-class ExtraLargeRealtyPhoto extends RealtyPhoto {
-  ExtraLargeRealtyPhoto(super.url);
-}

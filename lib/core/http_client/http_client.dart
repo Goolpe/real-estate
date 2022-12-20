@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -34,8 +35,14 @@ class IHttpClient implements HttpClient {
       } else {
         throw UnknownException(response.body);
       }
+    } on HttpException catch (_) {
+      rethrow;
     } on SocketException catch (_) {
       throw NoInternetException();
+    } on TimeoutException catch (_) {
+      throw TimeOverException();
+    } on Exception catch (error) {
+      throw UnknownException(error.toString());
     }
   }
 }
