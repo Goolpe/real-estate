@@ -8,11 +8,13 @@ import 'package:realestate/presentation/realty/pages/realty_details.dart';
 import 'package:realestate/presentation/widgets/widgets.dart';
 
 class RealtyPage extends StatelessWidget {
-  const RealtyPage({super.key});
+  const RealtyPage({required this.id, super.key});
+
+  final String id;
 
   @override
   Widget build(BuildContext context) {
-    final controller = RealtyController(getIt<IRealtyRepository>());
+    final controller = RealtyController(getIt<IRealtyRepository>(), id);
 
     return Scaffold(
       body: SafeArea(
