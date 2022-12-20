@@ -13,16 +13,24 @@ class ErrorIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(error),
-          TextButton.icon(
-            icon: const Icon(Icons.refresh),
-            onPressed: onRefresh,
-            label: const Text('Repeat request'),
-          )
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              error,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            TextButton.icon(
+              icon: const Icon(Icons.refresh),
+              onPressed: onRefresh,
+              label: const Text('Repeat request'),
+            )
+          ],
+        ),
       ),
     );
   }

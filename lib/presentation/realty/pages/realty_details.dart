@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:realestate/domain/entities/realty.dart';
 import 'package:realestate/presentation/realty/widgets/realty_description/realty_description.dart';
 import 'package:realestate/presentation/realty/widgets/realty_location.dart';
+import 'package:realestate/presentation/realty/widgets/realty_phone_button.dart';
 import 'package:realestate/presentation/realty/widgets/realty_photos.dart';
 import 'package:realestate/presentation/realty/widgets/realty_props.dart';
 import 'package:realestate/presentation/realty/widgets/realty_title.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class RealtyDetails extends StatelessWidget {
   const RealtyDetails({
@@ -52,17 +52,7 @@ class RealtyDetails extends StatelessWidget {
         if (data.phone.isNotEmpty)
           Positioned(
             bottom: 30,
-            child: FloatingActionButton.extended(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              icon: const Icon(Icons.phone),
-              label: Text(data.phone),
-              onPressed: () {
-                final uri = Uri.parse('tel:${data.phone.replaceAll('-', '')}');
-                launchUrl(uri);
-              },
-            ),
+            child: RealtyPhoneButton(phone: data.phone),
           )
       ],
     );
