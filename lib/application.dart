@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realestate/core/theme/theme.dart';
 import 'package:realestate/presentation/realty/pages/realty_page.dart';
 
 class Application extends StatelessWidget {
@@ -6,9 +7,10 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RealtyPage(),
+      theme: LightThemeData.theme,
+      home: const RealtyPage(),
     );
   }
 }

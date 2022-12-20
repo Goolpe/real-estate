@@ -26,6 +26,10 @@ A real estate app with Flutter (iOS and Android) based on the Funda API
   <li>flutter run</li>
 </ul>
 
+## Known issues
+
+- (Probably) Impossible to call from iOS Simulator :(
+
 # Tested on
 - iOS Simulator 14 Pro Max
 - Android Simulator Pixel 5

@@ -18,7 +18,18 @@ class RealtyPhoneButton extends StatelessWidget {
       icon: const Icon(Icons.phone),
       label: Text(phone),
       onPressed: () {
-        launchPhone(phone);
+        launchPhone(phone).then((success) {
+          if (!success) {
+            const snackBar = SnackBar(
+              content: Text(
+                'The phone number is incorrect :(',
+                textAlign: TextAlign.center,
+              ),
+              duration: Duration(seconds: 1),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          }
+        });
       },
     );
   }
