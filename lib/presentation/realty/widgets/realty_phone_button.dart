@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realestate/core/utils/utils.dart';
+import 'package:realestate/presentation/widgets/widgets.dart';
 
 class RealtyPhoneButton extends StatelessWidget {
   const RealtyPhoneButton({
@@ -20,14 +21,7 @@ class RealtyPhoneButton extends StatelessWidget {
       onPressed: () {
         launchPhone(phone).then((success) {
           if (!success) {
-            const snackBar = SnackBar(
-              content: Text(
-                'The phone number is incorrect :(',
-                textAlign: TextAlign.center,
-              ),
-              duration: Duration(seconds: 1),
-            );
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            ErrorSnackBar('The phone number is incorrect :(').show(context);
           }
         });
       },
