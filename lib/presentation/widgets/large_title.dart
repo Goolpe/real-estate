@@ -9,10 +9,7 @@ class LargeTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context)
-          .textTheme
-          .headline5
-          ?.copyWith(fontWeight: FontWeight.bold),
+      style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
     );
   }
 }

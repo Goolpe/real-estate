@@ -17,15 +17,13 @@ class RealtyChip extends StatelessWidget {
     return Chip(
       backgroundColor: theme.highlightColor.withOpacity(0.2),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
       avatar: Icon(iconData),
       label: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: Text(
           label,
-          style: theme.textTheme.caption
-              ?.copyWith(fontSize: 18, fontWeight: FontWeight.w400),
+          style: theme.textTheme.bodyMedium?.copyWith(fontSize: 18, fontWeight: FontWeight.w400),
         ),
       ),
     );

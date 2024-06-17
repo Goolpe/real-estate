@@ -9,10 +9,7 @@ class MidTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context)
-          .textTheme
-          .headline6
-          ?.copyWith(fontWeight: FontWeight.bold),
+      style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.bold),
     );
   }
 }

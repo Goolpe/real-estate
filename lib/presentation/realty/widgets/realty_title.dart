@@ -34,12 +34,12 @@ class RealtyTitle extends StatelessWidget {
                     Icon(
                       Icons.location_on_outlined,
                       size: 20,
-                      color: textTheme.caption?.color,
+                      color: textTheme.bodyMedium?.color,
                     ),
                     const SizedBox(width: 8),
                     Text(
                       address,
-                      style: textTheme.caption?.copyWith(fontSize: 16),
+                      style: textTheme.bodyMedium?.copyWith(fontSize: 16),
                     ),
                   ],
                 ),

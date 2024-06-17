@@ -22,7 +22,7 @@ class ErrorIndicator extends StatelessWidget {
               error,
               maxLines: 4,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             TextButton.icon(
               key: const Key('Refresh'),
